@@ -35,7 +35,9 @@ docker pull sas4c.azurecr.io/sas4c:9.4
 ## Run
 
 ```sh
-docker run --name sas -d -p 38080:38080 sas4c:9.4
+docker run --name sas -d \
+           -p 38080:38080 \
+           sas4c:9.4
 ```
 
 ## Exec
@@ -47,7 +49,11 @@ docker exec -it sas4c sh
 ## Volume Mount
 
 ```sh
-docker run --name sas -v $(pwd):/home/sas -d -p 8561:8561 -p 8591:8591 sas4c:9.4 sas tests/marks.sas
+docker run --name sas \
+           -v $(pwd):/home/sas -d \
+           -p 8561:8561 \
+           -p 8591:8591 \
+           sas4c:9.4 sas tests/marks.sas
 ```
 
 ## SAS Studio
@@ -55,5 +61,9 @@ docker run --name sas -v $(pwd):/home/sas -d -p 8561:8561 -p 8591:8591 sas4c:9.4
 Access at http://localhost:38080/SASStudio/
 
 ```sh
-docker run --name sas -d -p 8561:8561 -p 8591:8591 -p 38080:38080 sas4c:9.4-studio
+docker run --name sas -d \
+           -p 8561:8561 \
+           -p 8591:8591 \
+           -p 38080:38080 \
+           sas4c:9.4-studio
 ```
