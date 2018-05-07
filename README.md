@@ -1,8 +1,10 @@
 # SAS for Containers
 
-The SAS for Containers repository is a protected under ACR.
+[SAS4C][sas4c] for containers docker image from the [official source][official].
 
 ## Authentication to ACR
+
+Protected under the Azure Container Registry.
 
 ```sh
 docker login sas4c.azurecr.io
@@ -67,3 +69,7 @@ docker run --name sas -d \
            -p 38080:38080 \
            sas4c:9.4-studio
 ```
+
+[official]:            https://www.sas.com/en_ca/software/analytics-for-containers.html
+[sas4c]:               https://github.com/govcloud/docker-sas4c
+[registry]:            https://hub.docker.com/r/govcloud/docker-sas4c
