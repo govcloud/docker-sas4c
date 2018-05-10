@@ -1,6 +1,6 @@
 # SAS for Containers
 
-[SAS4C][sas4c] for containers docker image from the [official source][official].
+[SAS4C][github] for containers docker image from the [official source][official].
 
 ## Authentication to ACR
 
@@ -71,5 +71,5 @@ docker run --name sas -d \
 ```
 
 [official]:            https://www.sas.com/en_ca/software/analytics-for-containers.html
-[sas4c]:               https://github.com/govcloud/docker-sas4c
+[github]:               https://github.com/govcloud/docker-sas4c
 [registry]:            https://hub.docker.com/r/govcloud/docker-sas4c
