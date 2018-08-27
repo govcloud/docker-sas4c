@@ -14,13 +14,9 @@ password: xxxxx
 
 > Note: Azure ACR also supports access to repositories via inherited Active Directory profiles.
 
-## Images
-
-There are three images you can choose from:
+## Image
 
 * 9.4 (default)
-* 9.4-slim (slim)
-* 9.4-studio (studio)
 
 ## Build
 
@@ -67,7 +63,7 @@ docker run --name sas -d \
            -p 8561:8561 \
            -p 8591:8591 \
            -p 38080:38080 \
-           sas4c:9.4-studio
+           sas4c:9.4
 ```
 
 [official]:            https://www.sas.com/en_ca/software/analytics-for-containers.html

@@ -4,7 +4,7 @@ LABEL maintainer "William Hearn <william.hearn@canada.ca>"
 
 ENV container=docker
 
-ARG AZURE_ACCOUNT_NAME=statcan
+ARG AZURE_ACCOUNT_NAME=jupyter
 ENV ACCOUNT_NAME=${AZURE_ACCOUNT_NAME}
 
 ARG AZURE_ACCOUNT_KEY
@@ -34,9 +34,9 @@ RUN curl -L https://github.com/Azure/blobporter/releases/download/v0.6.12/bp_lin
 ADD scripts/* /
 
 RUN cd /usr/local/ && \
-    blobporter -c sas -n SASHomeStudioIntTech.tar -t blob-file && \
-    tar -xpf SASHomeStudioIntTech.tar && \
-    rm SASHomeStudioIntTech.tar && \
+    blobporter -c sas -n SASHome.tgz -t blob-file && \
+    tar -xzpf SASHome.tgz && \
+    rm SASHome.tgz && \
     chown -R sas:sasstaff /usr/local/SASHome && \
     ln -s /usr/local/SASHome/SASFoundation/9.4/bin/sas_en /usr/local/bin/sas
 
@@ -51,4 +51,4 @@ ENV SAS_HADOOP_JAR_PATH=/opt/hadoop/
 EXPOSE 8561 8591 38080
 
 ENTRYPOINT ["/bin/bash"]
-CMD ["/studio.sh"]
+CMD ["/start.sh"]
