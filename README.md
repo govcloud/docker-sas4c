@@ -7,7 +7,7 @@
 Protected under the Azure Container Registry.
 
 ```sh
-docker login sas4c.azurecr.io
+docker login statcan.azurecr.io
 username: xxxxx
 password: xxxxx
 ```
@@ -21,13 +21,13 @@ password: xxxxx
 ## Build
 
 ```sh
-docker build --build-arg AZURE_ACCOUNT_KEY=${AZURE_ACCOUNT_KEY} -t sas4c:9.4 .
+docker build --build-arg AZURE_ACCOUNT_KEY=${AZURE_ACCOUNT_KEY} -t statcan.azurecr.io/sas4c:9.4 .
 ```
 
 ## Pull
 
 ```sh
-docker pull sas4c.azurecr.io/sas4c:9.4
+docker pull statcan.azurecr.io/sas4c:9.4
 ```
 
 ## Run
@@ -35,7 +35,7 @@ docker pull sas4c.azurecr.io/sas4c:9.4
 ```sh
 docker run --name sas -d \
            -p 38080:38080 \
-           sas4c:9.4
+           statcan.azurecr.io/sas4c:9.4
 ```
 
 ## Exec
@@ -51,7 +51,7 @@ docker run --name sas \
            -v $(pwd):/home/sas -d \
            -p 8561:8561 \
            -p 8591:8591 \
-           sas4c:9.4 sas tests/marks.sas
+           statcan.azurecr.io/sas4c:9.4 sas tests/marks.sas
 ```
 
 ## SAS Studio
@@ -63,9 +63,9 @@ docker run --name sas -d \
            -p 8561:8561 \
            -p 8591:8591 \
            -p 38080:38080 \
-           sas4c:9.4
+           statcan.azurecr.io/sas4c:9.4
 ```
 
 [official]:            https://www.sas.com/en_ca/software/analytics-for-containers.html
-[github]:               https://github.com/govcloud/docker-sas4c
+[github]:              https://github.com/govcloud/docker-sas4c
 [registry]:            https://hub.docker.com/r/govcloud/docker-sas4c
